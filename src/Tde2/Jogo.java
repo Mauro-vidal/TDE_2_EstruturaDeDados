@@ -20,7 +20,7 @@ public class Jogo {
     void iniciarJogo() {
         while (!torre1.pilhaCheia()) {
             Random random = new Random();
-            torre1.push(random.nextInt(100));
+            torre1.push(random.nextInt(101));
         }
         torre1.imprimePilha();
     }
@@ -47,7 +47,6 @@ public class Jogo {
         return scanner.nextInt();
     }
 
-
     public void menuInicial() {
         int opcaoEscolhida = menu1();
         while (opcaoEscolhida != 0) {
@@ -63,13 +62,25 @@ public class Jogo {
         }
     }
 
+    public int acaoMovimentacao() {
+        System.out.println("Escolha uma movimentação: ");
+        System.out.println("0 - Voltar para o menu anterior");
+        System.out.println("1 - De torre 1 para torre 2");
+        System.out.println("2 - De torre 1 para torre 3");
+        System.out.println("3 - De torre 2 para torre 1");
+        System.out.println("4 - De torre 2 para torre 3");
+        System.out.println("5 - De torre 3 para torre 1");
+        System.out.println("6 - De torre 3 para torre 2");
+
+        return scanner.nextInt();
+    }
+
+
     public void menuMovimentacao() {
         int acao = acaoMovimentacao();
         while (acao != 0) {
             if (acao == 1) {
                 movimentacao(torre1, torre2);
-            } else if (acao == 2) {
-                movimentacao(torre1, torre3);
             } else if (acao == 2) {
                 movimentacao(torre1, torre3);
             } else if (acao == 3) {
@@ -90,18 +101,6 @@ public class Jogo {
         }
     }
 
-    public int acaoMovimentacao() {
-        System.out.println("Escolha uma movimentação: ");
-        System.out.println("0 - Voltar para o menu anterior");
-        System.out.println("1 - De torre 1 para torre 2");
-        System.out.println("2 - De torre 1 para torre 3");
-        System.out.println("3 - De torre 2 para torre 1");
-        System.out.println("4 - De torre 2 para torre 3");
-        System.out.println("5 - De torre 3 para torre 1");
-        System.out.println("6 - De torre 3 para torre 2");
-
-        return scanner.nextInt();
-    }
 
     private void validaFimJogo() {
         if (torre2.pilhaCheia() || torre3.pilhaCheia()) {

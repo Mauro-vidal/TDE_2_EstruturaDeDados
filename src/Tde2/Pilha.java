@@ -31,7 +31,7 @@ public class Pilha {
                 return true;
             }
         } else {
-            System.out.println("A pilha está chaia");
+            System.out.println("A pilha está cheia");
         }
         return false;
     }
