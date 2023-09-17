@@ -92,7 +92,7 @@ public class Jogo {
             } else if (acao == 6) {
                 movimentacao(torre3, torre2);
             } else if (acao == 0) {
-                System.out.println("Opção inválida");
+                System.out.println("voltar para menu");
             } else {
                 System.out.println("Opção inválida");
             }
@@ -124,6 +124,12 @@ public class Jogo {
         System.out.println("-----------Fim---------------");
     }
 
+    private int movimentacaoAutomatica() {
+        System.out.println("Digite 1 caso não deseje uma solução automática");
+        System.out.println("Digite 2 caso deseje preencher as pilhas automáticamente");
+
+        return scanner.nextInt();
+    }
     public void solucaoAutomatica() {
         int automatica = movimentacaoAutomatica();
         while (automatica != 1) {
@@ -142,12 +148,7 @@ public class Jogo {
     }
 
 
-    private int movimentacaoAutomatica() {
-        System.out.println("Digite 1 caso não deseje uma solução automática");
-        System.out.println("Digite 2 caso deseje preencher as pilhas automáticamente");
 
-        return scanner.nextInt();
-    }
 
 }
 
