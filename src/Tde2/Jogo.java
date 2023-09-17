@@ -128,35 +128,29 @@ public class Jogo {
     public void solucaoAutomatica() {
         int automatica = movimentacaoAutomatica();
         while (automatica != 1) {
-            if (automatica == 2){
-                movimentacao(torre1, torre3);
-                movimentacao(torre1, torre2);
-                movimentacao(torre3, torre2);
-                movimentacao(torre1, torre2);
-                movimentacao(torre2, torre3);
-                movimentacao(torre1, torre3);
-
-            } else {
-                System.out.println("Opção inválida");
-                break;
+                if (automatica == 2){
+                    movimentacao(torre1, torre3);
+                    movimentacao(torre1, torre2);
+                    movimentacao(torre3, torre2);
+                    movimentacao(torre1, torre3);
+                    movimentacao(torre2, torre1);
+                    movimentacao(torre2, torre3);
+                    movimentacao(torre1, torre3);
+                }
+                imprimirPilhas();
+                automatica = movimentacaoAutomatica();
             }
-            imprimirPilhas();
-            automatica = movimentacaoAutomatica();
-        }
     }
 
 
-    public int movimentacaoAutomatica() {
+    private int movimentacaoAutomatica() {
         System.out.println("Digite 1 caso não deseje uma solução automática");
         System.out.println("Digite 2 caso deseje preencher as pilhas automáticamente");
 
         return scanner.nextInt();
-
     }
 
-
 }
-
 
 
 
