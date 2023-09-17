@@ -128,63 +128,35 @@ public class Jogo {
     public void solucaoAutomatica() {
         int automatica = movimentacaoAutomatica();
         while (automatica != 1) {
-            if (automatica == 3){
+            if (automatica == 2){
                 movimentacao(torre1, torre3);
                 movimentacao(torre1, torre2);
                 movimentacao(torre3, torre2);
-                movimentacao(torre1, torre3);
-                movimentacao(torre2, torre1);
+                movimentacao(torre1, torre2);
                 movimentacao(torre2, torre3);
                 movimentacao(torre1, torre3);
-            } else if (automatica == 4){
-                movimentacao(torre1, torre3); //1
-                movimentacao(torre1, torre2);            //2
-                movimentacao(torre3, torre2) ;               //3
-                movimentacao(torre1, torre3);  //4
-                movimentacao(torre2, torre1);                //5
-                movimentacao(torre2, torre3);                //6
-                movimentacao(torre1, torre3) ;               //7
-                movimentacao(torre1, torre2) ;               //8
-                movimentacao(torre3, torre2) ;               //9
-                movimentacao(torre3,torre1) ;               //10
-                movimentacao(torre2, torre1)   ;             //11
-                movimentacao(torre1, torre2)  ;              //12
-                movimentacao(torre1, torre3)  ;              //13
-                movimentacao(torre2, torre3)  ;              //14
-                movimentacao(torre2, torre1)  ;              //15
-                movimentacao(torre3, torre2)  ;              //16
-                movimentacao(torre3, torre1) ;               //17
-                movimentacao(torre2, torre1)  ;              //18
-                movimentacao(torre2, torre3)  ;              //19
-                movimentacao(torre1, torre3)     ;           //20
-                movimentacao(torre1, torre2)    ;            //21
-                movimentacao(torre3, torre2)    ;            //22
-                movimentacao(torre1, torre3)     ;           //23
-                movimentacao(torre2, torre1)    ;            //24
-                movimentacao(torre2, torre3)    ;            //25
-                movimentacao(torre1, torre3)    ;            //25
-            } else if (automatica == 5){
 
-
+            } else {
+                System.out.println("Opção inválida");
+                break;
             }
             imprimirPilhas();
             automatica = movimentacaoAutomatica();
         }
     }
 
-    //
+
     public int movimentacaoAutomatica() {
         System.out.println("Digite 1 caso não deseje uma solução automática");
-        System.out.println(" 3 Tamanho: 3");
-        System.out.println(" 4 para tamanho 4");
-        System.out.println(" 5 para tamanho 5");
-        System.out.println("");
         System.out.println("Digite 2 caso deseje preencher as pilhas automáticamente");
 
         return scanner.nextInt();
 
     }
+
+
 }
+
 
 
 

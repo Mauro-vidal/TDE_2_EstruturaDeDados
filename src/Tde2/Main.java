@@ -11,7 +11,7 @@ public class Main {
         Jogo jogo = new Jogo(capacidade);
         jogo.iniciarJogo();
         jogo.menuInicial();
-        jogo.solucaoAutomatica();
+       jogo.solucaoAutomatica();
 
 
     }
